@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+    
+    <script>
+//       ***** First question *******
+        
+        var user_input = Number(prompt("Please enter a number"));
+        if(user_input > 928 || user_input < 532){
+            alert("Your number is "+ user_input);
+        }
+        
+        
+//        **** Secound question *****
+        
+        var input1 = Number(prompt("Please enter first number:"));
+        var input2 = Number(prompt("Please enter secound number:"));
+        var input3 = Number(prompt("Please enter third number:"));
+        
+        if(input1 < input2 && input2 < input3 ){
+            alert("Increasing...");
+        }
+        
+        
+        
+//        ***** third question ******
+        
+        num1 = Number(prompt("Enter a number"));
+        num2 = Number(prompt("and another"));
+        if(num1 < num2)
+                alert("Growing...");
+        
+        
+        
+//        ***** fourth question *****
+        
+        var uinput = Number(prompt("Chose a number"));
+        if(uinput%2)
+            alert("Odd");
+        else
+            alert("Even");
+        
+//        ****** question No 5 *******
+        var value1 = Number(prompt("Pick any number"));
+        var value2 = Number(prompt("Pick another number"));
+        if(value1 - value2 > 0)
+            alert(value2 + ", " + value1);
+        else
+            alert(value1 + ", " + value2);
+        
+//       ******* question No 6 *********
+        var val = prompt("Give me your number");
+        val = Number(val);
+        if(val>0)
+            alert("Positive");
+        else {
+            if(val < 0)
+                alert("Negative");
+            else
+                alert("Zero");
+        }
+    </script>
+    
+</body>
+</html>
