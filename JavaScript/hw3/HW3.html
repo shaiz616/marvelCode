@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .div1{
+            width: 50%; height: 250px;
+            border: 2px solid navy;
+        }
+        
+        .num{
+            width: 50px;
+        }
+    </style>
+    
+    <title></title>
+</head>
+
+<body>
+    <div class="div1">
+        <h2>
+            Please fill the fields below with numbers
+        </h2>
+            <form id="frm1" action="none">
+                <input type="number" id="num1">
+                <input type="number" id="num2">
+                <input type="number" id="num3">
+                <input type="number" id="num4">
+                <input type="number" id="num5">
+                <input type="number" id="num6">
+                
+            </form>
+        <br />
+        <br />
+        <button type="button" onclick="num()">submit</button>
+
+    </div>
+    
+    <script>
+        var i = 0, arr = new Array(6);
+        var getnum = document.getElementById("frm1");
+        //              *******    inserting 6 input from user to array
+       function num(){
+            for(i=0; i<arr.length; i++){
+                arr[i] = Number(getnum[i].value);
+            }   //      *******     printing array to console
+            console.table(arr);
+            
+            for(i=0; i<arr.length; i++){
+                console.log(arr[i]);
+            }
+            //      **********      finding smallest and largest numbers
+            var max, min, temp;
+            max = min = arr[0];
+            
+            for(i=1; i<arr.length; i++){
+                temp = arr[i];
+                if(temp > max){
+                    max = temp;
+                    continue;
+                }
+                else if(min > temp){
+                    min = temp;
+                }
+            }
+            console.log("The largest number is:", max, "\n","The smallest number is:", min);
+            
+            //      *********       calculating sum of array
+            for(i=0, temp = 0; i<arr.length; i++){
+                temp += arr[i];
+            }
+           console.log("The sum of the elements in the array is:", temp);
+            
+            var even=0, evenArr = [], odd = 0, oddArr = [];
+            for(i=0; i<arr.length; i++){
+                if(arr[i]%2){
+                    oddArr[odd] = arr[i], odd++;
+                    continue;
+                }
+                else{
+                    evenArr[even] = arr[i], even++;
+                }
+            }
+            console.table("these numbers are EVEN:", evenArr),
+            console.table("these numbers are ODD:",  oddArr);
+            var max2 = arr[0];
+            for(i=1; i<arr.length; i++){
+                temp = arr[i];
+                if(temp == max)
+                    continue;
+                else if(temp > max2){
+                    max2 = temp;
+                }
+            }
+            console.log("The secound largest number is:", max2);
+            
+        }
+        
+        var logicArr =[
+            [true, true],
+            [true, false],
+            [false, true],
+            [false, false]
+        ];
+        
+        
+        var op_str="'null'", bool;
+        var string, start_string, mid_string = `the result of the logical operator `;
+
+        
+        i=0; var check = 1;
+        while(i<logicArr.length){
+            switch(check){
+                case 1:
+                    bool = logicArr[i][0] & logicArr[i][1];
+                    start_string = `for the boolean values of ${logicArr[i][0]} and ${logicArr[i][1]}: `;
+                    op_str = "'AND'", check++;
+                    string = start_string + "\n" + mid_string + op_str +
+                            " is " + bool +"\n";
+                    break;
+                        
+                case 2:
+                    bool = logicArr[i][0] | logicArr[i][1];
+                    op_str = "'OR'", check++;
+                    string += mid_string +op_str + " is " + bool + "\n";
+                    break;
+                        
+                case 3:
+                    bool = logicArr[i][0] ^ logicArr[i][1];
+                    op_str = "'XOR'", check++;
+                    string += mid_string + op_str + " is " + bool + "\n";
+                    break;
+                default:
+                    i++, check =1, string +="\n****************\n" ;
+                    console.log(string);
+                        }
+        }
+        
+    </script>
+    
+</body>
+</html>
+
