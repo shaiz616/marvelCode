@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+    
+    
+    <script>
+        
+        
+        //      task No. 1
+        function reverse(num){
+            var res = 0,  temp = 0;
+            while(num){
+                temp = num%10;
+                res = 10*res + temp; 
+                num = Math.floor(num/10);
+                
+            }
+            return res;
+        }
+        
+        
+        var output, input = Number(prompt("enter a number:"));
+//        output = reverse(input);
+//        console.log(`the reverse is ${output}`);
+        
+        
+        //      task No. 2
+        function isPrime(num){
+            for(var i=2; i < Math.sqrt(num); i++){
+                if(num%i == 0){
+                    return i;
+                }  
+            }
+            return -1;
+        }
+        
+//        input = Number(prompt("enter a number:"))
+        output = isPrime(input);
+        if(output>0)
+            alert("Your number is *not* a prime");
+        else{
+            alert("your number is a prime");
+        }
+        
+        
+        //      task No.3
+        
+        var obj = {name: "shai" , car: "fiat"}
+        var x;
+       function theType(args){
+           return typeof(args)
+       }
+        
+        
+        output = theType(8);
+        console.log(output);
+        
+        output = theType(true);
+        console.log(output);
+        
+        output = theType("hello");
+        console.log(output);
+        
+        output = theType(reverse);
+        console.log(output);
+        
+        output = theType(x);
+        console.log(output);
+        
+        output = theType(obj);
+        console.log(output);
+        
+        
+        //      task No.4
+        // assuming value of 1€ = 3.9NIS, 1$ = 3.59
+        function shekelTo$(sum){
+              return sum/3.59;
+        }
+        
+        function shekelToEuro(sum){
+              return sum/3.9;
+        }
+        
+        function euroToShekel(sum){
+            return sum * 3.9;
+        }
+        
+        function $ToShekel(sum){
+            return sum * 3.59;
+        }
+        
+        var usd, euro, shekel = 1000;
+        
+        usd = shekelTo$(shekel);
+        console.log(usd);
+        
+        shekel = $ToShekel(usd);
+        console.log(shekel);
+        
+        euro = shekelToEuro(shekel);
+        console.log(euro);
+        
+        shekel = euroToShekel(euro);
+        console.log(shekel);
+        
+        
+    </script>
+</body>
+</html>
+
