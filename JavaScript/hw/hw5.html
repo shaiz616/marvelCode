@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+            //      part 1
+        var sec = Number(prompt("please enter No. of secounds to wait: "));
+        var counter = Number(prompt("and a number of repetition:"));
+        
+        for(counter; counter>0; --counter){
+            setTimeout(
+                function(){
+                    console.log(Math.random()*10);
+                }, counter*sec*1000
+            );
+        };
+        
+        
+//        //  part 2
+        
+        var names = ["shai", "gal", "mor", "yael", "moshe"];
+        var count = 0;
+        for(var i =0; i <names.length; i++){
+            setTimeout(
+                function(){
+                    console.log(names[count++]);
+                }, i*4000
+            );
+        };
+        
+//       //   *****   part 3  *********
+        var square = Number(prompt("please give a number to calculte:"));
+        alert(calcSQRT(square));
+        
+        function  calcSQRT(square){
+            return Math.sqrt(square);
+        };
+        
+//        //  *****  part 4   ********
+        var base = Number(prompt("enter the base of the exponent:"));
+        var power = Number(prompt("and the power for the calculation"));
+        alert(calcPower(base, power));
+        
+        function calcPower(base, power){
+            var prod = 1;
+            for(var i=0; i<power; i++){
+                prod *=base ;
+            };
+            return prod;
+        };  
+        
+        
+        //      ********    part 5  *****
+        
+
+        
+        var lyric = prompt("what are the words of the song?");
+        var song_name = prompt("what is the name of the song?");
+        
+        var first_place_index = firstApparence(lyric.toLowerCase(), song_name.toLowerCase() );
+        
+        if(first_place_index>0)
+            console.log(`the name of the song appare for the first time in the ${first_place_index} place`);
+        else
+            console.log("the name of the song was not found in the lyrics.\nmaybe there is more of the song?");
+        
+        
+        function firstApparence(lyric, song_name){
+            return lyric.indexOf(song_name);
+        };        
+        
+        
+    </script>
+</body>
+</html>
